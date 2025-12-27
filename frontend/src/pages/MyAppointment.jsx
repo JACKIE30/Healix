@@ -59,7 +59,7 @@ const MyAppointments = () => {
       key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount: order.amount,
       currency: order.currency,
-      name: 'Appointment Payment',
+      name: 'Healix',
       description: "Appointment Payment",
       order_id: order.id,
       receipt: order.receipt,
@@ -86,17 +86,24 @@ const MyAppointments = () => {
   // Function to make payment using razorpay
   const appointmentRazorpay = async (appointmentId) => {
     try {
-      const { data } = await axios.post(backendUrl + '/api/user/payment-razorpay', { appointmentId }, { headers: { token } })
+      const { data } = await axios.post(
+        backendUrl + '/api/user/payment-razorpay',
+        { appointmentId },
+        { headers: { token } }
+      );
+
+      console.log("Razorpay order response:", data);
+
       if (data.success) {
-        initPay(data.order)
+        initPay(data.order);
       } else {
-        toast.error(data.message)
+        toast.error(data.message);
       }
     } catch (error) {
-      console.log(error)
-      toast.error(error.message)
+      toast.error(error.message);
     }
-  }
+  };
+
 
   useEffect(() => {
     if (token) {
@@ -105,25 +112,25 @@ const MyAppointments = () => {
   }, [token])
 
   // Generate appointment data from doctors
-  useEffect(() => {
-    if (doctors.length) {
-      const generatedAppointments = doctors.slice(0, 3).map((doc, idx) => ({
-        _id: `appointment_${idx}`,
-        docData: {
-          name: doc.name,
-          speciality: doc.speciality,
-          image: doc.image,
-          address: doc.address || { line1: "Street X", line2: "City Y" }
-        },
-        slotDate: `12_0${idx + 1}_2025`,
-        slotTime: `${10 + idx}:00 AM`,
-        payment: idx === 1,         // Simulate second one as paid
-        isCompleted: idx === 2,     // Simulate third one as completed
-        cancelled: false
-      }))
-      setAppointments(generatedAppointments)
-    }
-  }, [doctors])
+  // useEffect(() => {
+  //   if (doctors.length) {
+  //     const generatedAppointments = doctors.slice(0, 3).map((doc, idx) => ({
+  //       _id: `appointment_${idx}`,
+  //       docData: {
+  //         name: doc.name,
+  //         speciality: doc.speciality,
+  //         image: doc.image,
+  //         address: doc.address || { line1: "Street X", line2: "City Y" }
+  //       },
+  //       slotDate: `12_0${idx + 1}_2025`,
+  //       slotTime: `${10 + idx}:00 AM`,
+  //       payment: idx === 1,         // Simulate second one as paid
+  //       isCompleted: idx === 2,     // Simulate third one as completed
+  //       cancelled: false
+  //     }))
+  //     setAppointments(generatedAppointments)
+  //   }
+  // }, [doctors])
 
 
 

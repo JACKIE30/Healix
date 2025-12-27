@@ -239,6 +239,7 @@ const paymentRazorpay = async (req, res) => {
     try {
 
         const { appointmentId } = req.body
+        console.log("Received appointmentId:", appointmentId);
         const appointmentData = await appointmentModel.findById(appointmentId)
 
         if (!appointmentData || appointmentData.cancelled) {
