@@ -1,6 +1,6 @@
-# Appointy - Doctor Appointment Web App
+# Healix - Doctor Appointment Web App
 
-**Appinty** is a full-stack web application designed to make healthcare more accessible by simplifying the process of booking doctor appointments. It offers three levels of login: **Patient**, **Doctor**, and **Admin**, each with distinct features tailored to their roles. The app integrates **online payment gateways (Stripe and Razorpay)** to facilitate seamless and secure payments. Built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js), Appointy provides an efficient, user-friendly experience for both patients and healthcare providers.
+**Healix** is a full-stack web application designed to make healthcare more accessible by simplifying the process of booking doctor appointments. It offers three levels of login: **Patient**, **Doctor**, and **Admin**, each with distinct features tailored to their roles. The app integrates **online payment gateways (Razorpay)** to facilitate seamless and secure payments. Built using the **MERN stack** (MongoDB, Express.js, React.js, and Node.js), Appointy provides an efficient, user-friendly experience for both patients and healthcare providers.
 
 ## 🛠️ Tech Stack
 
@@ -14,10 +14,10 @@
 
 ### 1. Three-Level Authentication
 
-- **Patient Login**: 
+- **Patient Login**:
   - Patients can sign up, log in, and book appointments with doctors.
   - Manage appointments (view, cancel, or reschedule).
-  - Secure online payment options available (cash, Stripe, Razorpay).
+  - Secure online payment options available (cash, Razorpay).
   - User profile with editable information (name, email, address, gender, birthday, profile picture).
 
 - **Doctor Login**:
@@ -48,7 +48,7 @@
 
 ## 📄 About Page
 
-- Provides information about **Appointy’s vision** and mission.
+- Provides information about **Healix's vision** and mission.
 - **Why Choose Us** section highlights:
   - **Efficiency**: Streamlined appointment process.
   - **Convenience**: Online booking and payment.
@@ -66,7 +66,7 @@
 - Displays detailed information about the selected doctor:
   - **Profile picture, qualification, experience**, and a brief description.
   - **Appointment booking form**: Choose date, time, and payment method.
-  - Online payment options: **Cash, Stripe, or Razorpay**.
+  - Online payment options: **Cash or Razorpay**.
   - **Related doctors** section at the bottom.
 - Users need to **create an account or log in** before booking an appointment.
 
@@ -109,20 +109,19 @@
   - **Razorpay Integration**
 - Ensures a secure and smooth payment experience for users.
 
-## 🌐 Project Setup
+<!-- ## 🌐 Project Setup
 
 To set up and run this project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/appointy.git
-   cd appointy
+   git clone https://github.com/your-username/Healix.git
+   cd Healix
+   cd frontend
    ```
 
 2. **Install Dependencies**:
    ```bash
-   npm install
-   cd client
    npm install
    ```
 
@@ -154,7 +153,7 @@ appointy/
 ├── utils/           # Utility Functions
 ├── public/          # Static Files
 └── .env             # Environment Variables
-```
+``` -->
 
 ## 🤝 Contributing
 
@@ -163,6 +162,6 @@ We welcome contributions! Please feel free to submit issues, fork the repository
 
 ## 🌟 Acknowledgements
 
-- Thanks to the developers and contributors of MongoDB, Express.js, React.js, Node.js, Stripe, and Razorpay for their fantastic tools and libraries.
+- Thanks to the developers and contributors of MongoDB, Express.js, React.js, Node.js and Razorpay for their fantastic tools and libraries.
 
 ---
